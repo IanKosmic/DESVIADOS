@@ -1,0 +1,276 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Special Elite', cursive;
+    background: #000;
+    color: #fff;
+    line-height: 1.6;
+    overflow-x: hidden;
+    width: 100vw;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 20px 15px;
+    background: linear-gradient(135deg, #ff0000, #cc0000);
+    color: #fff;
+    border-bottom: 3px solid #fff;
+    text-transform: uppercase;
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.header-content h1 {
+    font-size: 2.5em;
+    margin: 0;
+    text-shadow: 2px 2px #000;
+}
+
+/* Sección del cartel principal */
+.main-poster {
+    padding: 20px;
+    background: #111;
+    width: 100%;
+}
+
+.featured {
+    max-width: 900px;
+    margin: 0 auto;
+    border: 5px solid #ff0000;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
+    width: 100%;
+    background: #222;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.featured:hover {
+    transform: translateY(-5px);
+}
+
+.featured .concert-image {
+    width: 100%;
+    height: 70vh;
+    object-fit: contain;
+    border-bottom: 2px solid #fff;
+}
+
+.featured .concert-info {
+    padding: 15px;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.featured-button {
+    background: #ff0000;
+    font-size: 1.5em;
+    padding: 10px 30px;
+    margin: 10px 0;
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.featured-button:hover {
+    background: #cc0000;
+    transform: scale(1.05);
+}
+
+/* Sección de conciertos */
+.concerts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+    width: 100%;
+}
+
+.concert {
+    background: #111;
+    border: 5px solid #ff0000;
+    padding: 15px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.concert:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px rgba(255, 0, 0, 0.8);
+}
+
+.concert-video {
+    width: 100%;
+    height: 65vh;
+    object-fit: contain;
+    border-bottom: 2px solid #fff;
+}
+
+.concert-info {
+    padding: 10px;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.concert-info h2 {
+    font-size: 1.8em;
+    margin: 0 0 8px;
+    color: #ff0000;
+    text-transform: uppercase;
+}
+
+.concert-info h1 {
+    font-size: 1.5em;
+    margin: 5px 0;
+}
+
+/* Estilos para el mapa */
+.map-container {
+    width: 100%;
+    height: 20vh;
+    margin-top: 10px;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Sección de compra de boletos */
+.buy-tickets {
+    text-align: center;
+    padding: 40px 20px;
+    width: 100%;
+}
+
+.whatsapp-button {
+    background: #25D366;
+    color: #fff;
+    padding: 20px 50px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 2em;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block;
+    width: 80%;
+    max-width: 500px;
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(37, 211, 102, 0.8);
+}
+
+/* Footer */
+footer {
+    background: #000;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-top: 5px solid #ff0000;
+    width: 100%;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
+}
+
+footer h3 {
+    font-size: 1.5em;
+    margin: 0 0 10px;
+    text-transform: uppercase;
+}
+
+.social-links {
+    margin: 10px 0;
+}
+
+.social-links h4 {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.social-links a {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 2em;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: scale(1.3);
+    color: #ff0000;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .header-content h1 {
+        font-size: 2em;
+    }
+    .featured .concert-image {
+        height: 50vh;
+    }
+    .concert-video {
+        height: 45vh;
+    }
+    .concert-info h2 {
+        font-size: 1.5em;
+    }
+    .concert-info h1 {
+        font-size: 1.2em;
+    }
+    .map-container {
+        height: 15vh;
+    }
+    .featured-button {
+        font-size: 1.2em;
+        padding: 8px 20px;
+    }
+    .whatsapp-button {
+        font-size: 1.5em;
+        padding: 15px 30px;
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-content h1 {
+        font-size: 1.5em;
+    }
+    .featured .concert-image {
+        height: 40vh;
+    }
+    .concert-video {
+        height: 35vh;
+    }
+    .concert-info h2 {
+        font-size: 1.3em;
+    }
+    .concert-info h1 {
+        font-size: 1em;
+    }
+    .map-container {
+        height: 10vh;
+    }
+    .whatsapp-button {
+        font-size: 1.2em;
+        padding: 10px 20px;
+        width: 95%;
+    }
+}
