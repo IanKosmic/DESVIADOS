@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Animación de elementos al entrar en el viewport
     const elements = document.querySelectorAll('.concert, .featured');
 
     const observer = new IntersectionObserver((entries, observer) => {
@@ -14,27 +15,18 @@ document.addEventListener('DOMContentLoaded', () => {
         rootMargin: '0px 0px -50px 0px'
     });
 
-    elements.forEach((element, index) => {
+    elements.forEach((element) => {
         element.style.opacity = '0';
         element.style.transform = 'translateY(30px)';
         element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
         observer.observe(element);
     });
 
+    // Reproducción automática de todos los videos al cargar la página
     const videos = document.querySelectorAll('.concert-video');
-    const videoObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.play();
-            } else {
-                entry.target.pause();
-            }
-        });
-    }, {
-        threshold: 0.2,
-        rootMargin: '0px 0px -50px 0px'
-    });
     videos.forEach((video) => {
-        videoObserver.observe(video);
+        video.play().catch(error => {
+            console.log('Error al reproducir el video automáticamente:', error);
+        });
     });
 });
